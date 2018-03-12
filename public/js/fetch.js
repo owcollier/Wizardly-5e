@@ -126,7 +126,7 @@ var api = {
         'Accept': 'application/json'
       }
     }).then(normalizeResponseErrors)
-      .then(res => res.json());
+      .then(res => res.status);
   },
 
   spellBook: function (id) {

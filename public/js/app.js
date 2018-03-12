@@ -67,13 +67,13 @@ const renderDetail = function (store) {
   $('.add-to-spell-book').show();
   $('.add-to-spell-alert').hide();
 
-  store.spellBookListDetails.map(spell => {
-    if (spell.name === item.name) {
+  store.spellBookList.map(spell => {
+    if (spell.spell_id === item._id) {
       $('.add-to-spell-book').hide();
       $('.add-to-spell-alert').show();
     }
   });
-  
+
   el.find('.name').text(item.name);
   el.find('.description').text(item.description);
   el.find('.higher-levels').text(item.higher_levels);
@@ -350,12 +350,9 @@ const handleAddSpell = function (event) {
   };
 
   const id = store.activeWizard._id;
-
-  console.log('the wizard in question:', store.activeWizard.spellBook);
-
   let dupe = null;
 
-  store.activeWizard.spellBook.map( function (spell) {
+  store.spellBookList.map( function (spell) {
 
     if (spell.spell_id === store.activeSpellId) {
       dupe = 'yep';
