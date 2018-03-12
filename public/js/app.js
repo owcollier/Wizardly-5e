@@ -252,15 +252,30 @@ const handleCreateWizard = function (event) {
   };
   api.wizardCreate(document)
     .then(response => {
+      console.log('create wiz response:', response);
       store.item = response;
       store.wizardsList = null; //invalidate cached list results
-      renderWizardDetail(store);
-      store.view = 'wizardDetail';
+      store.activeWizard = response;
+      createWizardHelper(store);
+    }).catch(err => {
+      console.error(err);
+    });
+};
+
+const createWizardHelper = function (store) {
+
+  api.wizardSearch()
+    .then(response => {
+      store.wizardsList = response;
+      renderWizardsResults(store);
+
+      store.view = 'wizards';
       renderPage(store);
     }).catch(err => {
       console.error(err);
     });
 };
+
 
 const handleWizardUpdate = function (event) {
   event.preventDefault();
@@ -313,7 +328,8 @@ const handleWizardRemove = function (event) {
   api.wizardRemove(id, store.token)
     .then(() => {
       store.wizardsList = null; //invalidate cached list results
-      return handleWizards(event);
+      store.activeWizard = {};
+      createWizardHelper(store);
     }).catch(err => {
       console.error(err);
     });
@@ -480,7 +496,7 @@ const handleSpellBook = function (event) {
   const el = $(event.target);
 
   // console.log(store.activeWizard._id);
-
+  console.log('id?', store.activeWizard._id);
   const id = store.activeWizard._id || el.closest('li').attr('id');
   // store.activeWizardId = el.closest('li').attr('id');
   // console.log(store.activeWizardId);
