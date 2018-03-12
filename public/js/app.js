@@ -98,14 +98,16 @@ const renderWizardDetail = function (store) {
 
 const renderSpellBookResults = function (store) {
 
-  console.log('state of spellbooklist', store.spellBookList);
-  console.log('store', store);
+  console.log('hey');
 
   const listItems = store.spellBookList.map((item) => {
-    const spellNameFind = function (spell) {
+    console.log('here');
+    // const spellNameFind = function (spell) {
+    //   return spell._id === item.spell_id;
+    // };
+    const spellName = store.spellBookListDetails.find(function (spell){
       return spell._id === item.spell_id;
-    };
-    const spellName = store.spellBookListDetails.find(spellNameFind);
+    });
   
     return `<li id="${item.spell_id}">
                 <a href="${item.url}" class="see-spell-book-details">${spellName.name}, ${spellName.type}</a>
@@ -114,6 +116,8 @@ const renderSpellBookResults = function (store) {
                 <p>Prepared? : ${item.prepared}</p>
               </li>`;
   });
+
+  console.log('bbbb', listItems);
   
   $('#spell-book-result').html(`<h3>${store.activeWizard.name}'s Spell Book: </h3>`);
   $('#spell-book-result').append('<ul>').find('ul').append(listItems);
@@ -341,43 +345,57 @@ const handleAddSpell = function (event) {
 
   const id = store.activeWizard._id;
 
-  store.activeWizard.spellBook.find( function (val) {
-    console.log('val', val);
-    if (!val.spell_id === store.activeSpellId) {
-      api.spellBookAdd(id, document, store.token)
-        .then(results => {
-          store.activeSpellId = null; //invalidate cached active spell id
-  
-          console.log('result', results);
-          store.activeWizard._id = results._id;
-          store.spellBookList = results.spellBook;
-          console.log('bang', store.spellBookList);
-          renderSpellBookResults(store);
-          
-          store.view = 'spell-book-section';
-          console.log('view', store.view);
-          renderPage(store);
-        }).catch(err => {
-          store.error = err;
-        });
+  console.log('the wizard in question:', store.activeWizard.spellBook);
+
+  store.activeWizard.spellBook.map( function (spell) {
+
+    if (spell.spell_id === store.activeSpellId) {
+      return console.log('duplicate');
     }
+    
   });
 
 
   api.spellBookAdd(id, document, store.token)
     .then(results => {
       store.activeSpellId = null; //invalidate cached active spell id
-
-      console.log('result', results);
       store.activeWizard._id = results._id;
       store.spellBookList = results.spellBook;
-      console.log(store.spellBookList);
-      renderSpellBookResults(store);
 
-      store.view = 'spell-book-section';
-      renderPage(store);
+      addSpellHelper(store);
     }).catch(err => {
       store.error = err;
+    });
+};
+
+const addSpellHelper = function (store) {
+
+  // console.log(store.activeWizard._id);
+
+  const id = store.activeWizard._id;
+  // store.activeWizardId = el.closest('li').attr('id');
+  // console.log(store.activeWizardId);
+  const detailsPromises = [];
+
+  api.wizardDetails(id)
+    .then(wizard => {
+      store.activeWizard = wizard;
+      store.activeWizard.spellBook.map( spell => {
+        detailsPromises.push(api.spellDetails(spell.spell_id));
+      });
+      return Promise.all(detailsPromises);
+    }).then(promises => {
+      store.spellBookListDetails = promises;
+      api.spellBook(id)
+        .then(response => {
+          store.spellBookList = response;
+          renderSpellBookResults(store);
+
+          store.view = 'spell-book-section';
+          renderPage(store);
+        }).catch(err => {
+          store.error = err;
+        });
     });
 };
 
@@ -472,14 +490,12 @@ const handleSpellBook = function (event) {
   api.wizardDetails(id)
     .then(wizard => {
       store.activeWizard = wizard;
-      console.log('active wiz spellBook', store.activeWizard.spellBook);
       store.activeWizard.spellBook.map( spell => {
         detailsPromises.push(api.spellDetails(spell.spell_id));
       });
       return Promise.all(detailsPromises);
     }).then(promises => {
       store.spellBookListDetails = promises;
-      console.log('should have the details', store.spellBookListDetails);
       api.spellBook(id)
         .then(response => {
           store.spellBookList = response;
@@ -574,7 +590,8 @@ jQuery(function ($) {
     spellBookListDetails: [],
     item: null,   // currently selected document
     activeSpellId: null,        // currently selected spell
-    activeWizard: {}     // currently selected wizard
+    activeWizard: {},
+    alert: null    // currently selected wizard
   };
 
   // $('#create').on('submit', STORE, handleCreate);
