@@ -63,6 +63,17 @@ const renderWizardEdit = function (store) {
 const renderDetail = function (store) {
   const el = $('#compendiumDetail');
   const item = store.item;
+
+  $('.add-to-spell-book').show();
+  $('.add-to-spell-alert').hide();
+
+  store.spellBookListDetails.map(spell => {
+    if (spell.name === item.name) {
+      $('.add-to-spell-book').hide();
+      $('.add-to-spell-alert').show();
+    }
+  });
+  
   el.find('.name').text(item.name);
   el.find('.description').text(item.description);
   el.find('.higher-levels').text(item.higher_levels);
@@ -98,10 +109,7 @@ const renderWizardDetail = function (store) {
 
 const renderSpellBookResults = function (store) {
 
-  console.log('hey');
-
   const listItems = store.spellBookList.map((item) => {
-    console.log('here');
     // const spellNameFind = function (spell) {
     //   return spell._id === item.spell_id;
     // };
@@ -116,8 +124,6 @@ const renderSpellBookResults = function (store) {
                 <p>Prepared? : ${item.prepared}</p>
               </li>`;
   });
-
-  console.log('bbbb', listItems);
   
   $('#spell-book-result').html(`<h3>${store.activeWizard.name}'s Spell Book: </h3>`);
   $('#spell-book-result').append('<ul>').find('ul').append(listItems);
@@ -128,7 +134,7 @@ const handleCompendium = function (event) {
   const store = event.data;
   const el = $(event.target);
   const spellName = el.find('[name=spellName]').val();
-  var query;
+  let query;
   if (spellName) {
     query = {
       title: el.find('[name=spellName]').val()
@@ -347,34 +353,34 @@ const handleAddSpell = function (event) {
 
   console.log('the wizard in question:', store.activeWizard.spellBook);
 
+  let dupe = null;
+
   store.activeWizard.spellBook.map( function (spell) {
 
     if (spell.spell_id === store.activeSpellId) {
-      return console.log('duplicate');
+      dupe = 'yep';
     }
-    
   });
 
+  if (dupe) {
+    console.log('dupe');
+  } else {
+    api.spellBookAdd(id, document, store.token)
+      .then(results => {
+        store.activeSpellId = null; //invalidate cached active spell id
+        store.activeWizard._id = results._id;
+        store.spellBookList = results.spellBook;
 
-  api.spellBookAdd(id, document, store.token)
-    .then(results => {
-      store.activeSpellId = null; //invalidate cached active spell id
-      store.activeWizard._id = results._id;
-      store.spellBookList = results.spellBook;
-
-      addSpellHelper(store);
-    }).catch(err => {
-      store.error = err;
-    });
+        addSpellHelper(store);
+      }).catch(err => {
+        store.error = err;
+      });  
+  }
 };
 
 const addSpellHelper = function (store) {
 
-  // console.log(store.activeWizard._id);
-
   const id = store.activeWizard._id;
-  // store.activeWizardId = el.closest('li').attr('id');
-  // console.log(store.activeWizardId);
   const detailsPromises = [];
 
   api.wizardDetails(id)
@@ -410,10 +416,6 @@ const handleSpellPreparedToggle = function (event) {
   const document = {
     spell_id: spellId
   };
-
-  console.log('I am here');
-  console.log('document', document);
-  console.log('id', id);
 
   api.spellBookToggle(id, document)
     .then((response) => {
@@ -522,17 +524,6 @@ const handleViewWizards = function (event) {
   renderPage(store);
 };
 
-// const handleViewList = function (event) {
-//   event.preventDefault();
-//   const store = event.data;
-//   if (!store.list) {
-//     handleSearch(event);
-//     return;
-//   }
-//   store.view = 'search';
-//   renderPage(store);
-// };
-
 const handleViewCompendium = function (event) {
   event.preventDefault();
   const store = event.data;
@@ -543,15 +534,6 @@ const handleViewCompendium = function (event) {
   store.view = 'compendiumOfSpells';
   renderPage(store);
 };
-
-// const handleViewEdit = function (event) {
-//   event.preventDefault();
-//   const store = event.data;
-//   renderEdit(store);
-
-//   store.view = 'edit';
-//   renderPage(store);
-// };
 
 const handleViewEditWizard = function (event) {
   event.preventDefault();
@@ -590,8 +572,7 @@ jQuery(function ($) {
     spellBookListDetails: [],
     item: null,   // currently selected document
     activeSpellId: null,        // currently selected spell
-    activeWizard: {},
-    alert: null    // currently selected wizard
+    activeWizard: {}   // currently selected wizard
   };
 
   // $('#create').on('submit', STORE, handleCreate);
