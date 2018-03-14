@@ -9,29 +9,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Aclonica" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Caudex:700|Work+Sans:300,400" rel="stylesheet">
 	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 
 <body>
-	<div id="nav-bar" class="top-nav">
-		<button type="submit" class="home-nav viewHome"><span class="far fa-star"></span>Home</button>
-		<button type="submit" class="wizards-nav viewWizards"><span class="fas fa-magic"></span>Wizards</button>
-	</div>
+	<nav id="nav-bar" class="header-nav">
+		<ul class="header-nav-list">
+			<li>
+				<a href="#" class="home-nav viewHome"><span class="far fa-star"></span>Home</a>
+			</li>
+			<li>
+				<a href="#" class="wizards-nav viewWizards"><span class="fas fa-magic"></span>Wizards</a>
+			</li>
+		</ul>
+	</nav>
 
-	<section id="home" class= "view">
-		<h2>Welcome to Wizardly 5e!</h2>
-		<br/>
-		<p>A simple D&D 5th edition app to help you manage your wizard's spell book!
-		<br/>
-		<p>Click the wizards button above to get started.
-		<br/>
+	<section id="home" class="view">
+		<h1 class="landing-title">Welcome to Wizardly 5e ~</h1>
+		<span>A simple D&D 5th edition app to help you manage your wizard's spell book.</span>
+		<span class="descriptive-span">Click the wizards button above to get started.</span>
 		
-
-		
-		<div id="WizOfCoastStuff">
-			<span id="fine-print">This app was created by Wade Collier and Robert Frazier. © 2017. The data comes from 5e-api.com. Wizards of the Coast, Dungeons & Dragons, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2015 Wizards. All Rights Reserved. 5e-api.com and the creators of this app are not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. Click the logo to open the Wizards of the Coast website in a new tab:</span>
-			<a href="http://dnd.wizards.com" target="_blank">
-				Wizards logo here
+		<div class="disclaimer">
+			<span class="fine-print">Wizardly 5e © 2017. All spell data comes from the Official Fifth Edition Dungeons & Dragons Player's Handbook. Wizards of the Coast, Dungeons & Dragons, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2015 Wizards. All Rights Reserved. This app is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.</span>
+			<a href="http://dnd.wizards.com" target="_blank" class="wiz-logo">
+				<span class="fab fa-d-and-d"></span>
 			</a>
 		</div>
 
@@ -86,12 +88,8 @@
 	</section>
 
 	<section id="wizards" class="view">
-		<h4>Click on a wizard to manage spell book</h4>
-		<div id="allWizards">
-			<fieldset><legend>Roster of Wizards</legend>
-				<div id="allWizards"></div>
-			</fieldset>
-		</div>
+		<h4>Select your wizard</h4>
+		<div id="allWizards"></div>
 		<button type="submit" class="viewCreateWizard">Create a Wizard</button>
 	</section>
 
