@@ -27,8 +27,32 @@
 
 	<section id="home" class="view">
 		<h1 class="landing-title">Welcome to Wizardly 5e ~</h1>
-		<span>A simple D&D 5th edition app to help you manage your wizard's spell book.</span>
-		<span class="descriptive-span">Click the wizards button above to get started.</span>
+		<span class="landing-tag-line">A simple D&D 5th edition app to help you manage your wizard's spell book.</span>
+		<div class=app-description-flex>
+			<div class=app-description-flex-row>
+				<div class=app-description-flex-row-detail>
+					<h4>Wizard Stats</h4>
+					<span>Your wizard's relevant casting stats, stored right alongside your spell book.</span>
+				</div>
+				<div class=app-description-flex-row-detail>
+					<h4>Your Spell Book</h4>
+					<span>All your known spells in one place, organized by casting level. Manage your beloved spell book without the pen and paper.</span>
+				</div>
+			</div>
+			<div class=app-description-flex-row>
+				<div class=app-description-flex-row-detail>
+					<h4>Spell Reference</h4>
+					<span>Convenient access to details on 200+ fifth edition Wizard spells. Check out spell descriptions directly from your spell book.</span>
+				</div>
+				<div class=app-description-flex-row-detail>
+					<h4>Track Prepared Spells</h4>
+					<span>Easy prepared spell tracking. Toggle prepared status with one touch. It's like magic!</span>
+				</div>
+			</div>
+		</div>
+		<div class="quick-start">
+			<a href="#" class="viewCreateWizard">Let's get started.</a>
+		</div>
 		
 		<div class="disclaimer">
 			<span class="fine-print">Wizardly 5e © 2017. All spell data comes from the Official Fifth Edition Dungeons & Dragons Player's Handbook. Wizards of the Coast, Dungeons & Dragons, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2015 Wizards. All Rights Reserved. This app is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.</span>
@@ -90,7 +114,7 @@
 	<section id="wizards" class="view">
 		<h4>Select your wizard</h4>
 		<div id="allWizards"></div>
-		<button type="submit" class="viewCreateWizard">Create a Wizard</button>
+		<button type="submit" class="viewCreateWizard">Create a new Wizard</button>
 	</section>
 
 	<section id="wizardDetail" class="view">
@@ -114,7 +138,6 @@
 	</section>
 
 	<form id="createWizard" class="view">
-		<fieldset>
 			<legend>Create a wizard</legend>
 			<div>
 				<label for="name">Wizard name:</label>
@@ -128,13 +151,10 @@
 				<label for="intelligence">Intelligence score:</label>
 				<input type="number" name="intelligence" min="1" max="30">
 			</div>
-			<br/>
-			<br/>
-			<form class="create-wizard-buttons">
+			<div class="create-wizard-buttons">
 				<button type="submit" class="createWizardNow">Create</button>
-				<button type="reset" class="viewWizards">Back to Roster</button>
-			</form>
-		</fieldset>
+				<button type="submit" class="viewWizards">Back to Roster</button>
+			</div>
 	</form>
 
 	<form id="edit-wizard" class="view">
@@ -153,20 +173,20 @@
 				<input type="number" name="intelligence" min="1" max="30">
 			</div>
 			<button type="submit" class="updateWizardNow">Update</button>
-			<button type="reset" class="viewWizards">Go Back</button>
+			<button type="submit" class="spell-book-wizards-detail">Go Back</button>
 		</fieldset>
 	</form>
 
 	<section id="spell-book-section" class="view">
 		<div id="spell-book">
-			<fieldset><legend></legend>
+				<div id="spell-book-header"></div>
 				<div id="spell-book-result"></div>
 				<ul id="nav">
 					<li>
 						<a href="" class="spell-book-compendium-search">Add a spell</a>
 					</li>
 					<li>
-						<a href="" class="spell-book-wizards-detail">&lt; View my Wizard</a>
+						<a href="" class="spell-book-wizards-detail">View my Wizard</a>
 					</li>
 				</ul>
 			</fieldset>

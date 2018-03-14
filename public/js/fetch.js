@@ -114,7 +114,7 @@ var api = {
       },
       body: document ? JSON.stringify(document) : null
     }).then(normalizeResponseErrors)
-      .then(res => res.json());
+      .then(res => res.status);
   },
 
   wizardRemove: function (id) {

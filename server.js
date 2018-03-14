@@ -130,7 +130,9 @@ app.put('/api/v1/wizards/:id', (req, res) => {
         intelligenceModifier: intMod,
         maxPrepared: maxPrep},
       {new: true})
-    .then(updatedPost => res.status(204).end())
+    .then(() => {
+      res.status(204).end();
+    })
     .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
 

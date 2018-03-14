@@ -46,7 +46,7 @@ const renderWizardsResults = function (store) {
   const listItems = store.wizardsList.map((item) => {
     // console.log(item.url);
     return `<li id="${item._id}">
-                <a href="${item.url}" class="this-spell-book">${item.name}, level ${item.level} wizard</a>
+                <a href="${item.url}" class="this-spell-book"><span class="wizard-name">${item.name}</span> level ${item.level} wizard</a>
               </li>`;
   });
   $('#allWizards').empty().append('<ul>').find('ul').append(listItems);
@@ -109,6 +109,9 @@ const renderWizardDetail = function (store) {
 
 const renderSpellBookResults = function (store) {
 
+  const spellBookHeader = ` <h3>Spell Book of <span class="wizard-name">${store.activeWizard.name}</span> - level ${store.activeWizard.level} wizard</h3>
+                            <a href="#" class="spell-book-wizards-detail"><span class="fas fa-info-circle"></span>Wizard Details</a>`;
+
   const listItems = store.spellBookList.map((item) => {
     // const spellNameFind = function (spell) {
     //   return spell._id === item.spell_id;
@@ -125,8 +128,8 @@ const renderSpellBookResults = function (store) {
               </li>`;
   });
   
-  $('#spell-book-result').html(`<h3>${store.activeWizard.name}'s Spell Book: </h3>`);
-  $('#spell-book-result').append('<ul>').find('ul').append(listItems);
+  $('#spell-book-header').html(spellBookHeader);
+  $('#spell-book-result').empty().append('<ul>').find('ul').append(listItems);
 };
 
 const handleCompendium = function (event) {
@@ -289,14 +292,27 @@ const handleWizardUpdate = function (event) {
     intelligence: el.find('[name=intelligence]').val()
   };
   api.wizardUpdate(document, store.token)
-    .then(response => {
-      store.item = response;
-      store.wizardsList = null; //invalidate cached list results
-      renderWizardDetail(store);
-      store.view = 'wizardDetail';
-      renderPage(store);
+    .then(() => {
+      wizardUpdateHelper(store);
     }).catch(err => {
       console.error(err);
+    });
+};
+
+const wizardUpdateHelper = function (store) {
+
+  const id = store.activeWizard._id;
+
+  api.wizardDetails(id)
+    .then(response => {
+      store.item = response;
+      renderWizardDetail(store);
+
+      store.view = 'wizardDetail';
+      renderPage(store);
+
+    }).catch(err => {
+      store.error = err;
     });
 };
 
@@ -588,11 +604,9 @@ jQuery(function ($) {
     activeWizard: {}   // currently selected wizard
   };
 
-  // $('#create').on('submit', STORE, handleCreate);
-  // $('#edit').on('submit', STORE, handleUpdate);
+  // home related listener for quick start
 
-  // $('#detail').on('click', '.remove', STORE, handleRemove);
-  // $('#detail').on('click', '.edit', STORE, handleViewEdit);
+  $('#home').on('click', '.viewCreateWizard', STORE, handleViewCreateWizard);
 
   // compendium related listeners 
   $('#result').on('click', '.compendiumDetail', STORE, handleCompendiumDetails);
