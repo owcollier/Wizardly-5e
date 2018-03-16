@@ -212,11 +212,163 @@ button {
 	padding-bottom: 12px;
 	font-size: 18px;
 	border: 2px solid rgba(248, 248, 248, 1);
+	cursor: pointer;
 }
 
 .wizard-name {
 	font-size: 30px;
 	font-family: 'Caudex', serif;
+}
+
+/* spell book styles */
+
+#spell-book h1 {
+	font-family: 'Work Sans', sans-serif;
+	color: #FDB44B;
+	font-size: 24px;
+	font-weight: 300;
+	font-style: italic;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#spell-book h3 {
+	text-align: center;
+	font-family: 'Caudex', serif;
+	color: #F8F8F8;
+	font-size: 48px;
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
+#spell-book-result {
+	height: 60vh;
+	overflow: scroll;
+	border: 4px solid rgba(255,82,82,0.87);
+	border-radius: 12px;
+	background-color: rgba(35, 16, 58, 0.200);
+	margin-bottom: 2%;
+}
+
+.spell-book-header-name {
+	display: flex;
+	align-items: center;
+}
+
+.spell-book-header-name a {
+	color: inherit;
+	font-size: 24px;
+}
+
+.spell-book-header-name a:hover {
+	color: #FDB44B;
+}
+
+.spell-book-header-name svg {
+	margin-right: 10px;
+}
+
+.spell-book-wizard-name {
+	font-family: 'Caudex', serif;
+	color: #F8F8F8;
+	font-size: 48px;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.spell-book-level-cat {
+	color: #F8F8F8;
+	font-size: 28px;
+	margin-top: 15px;
+	margin-left: 40px;
+	margin-right: 40px;
+	border-bottom: 2px solid #F8F8F8;
+}
+
+#spell-book-result a {
+	color: #F8F8F8;
+	text-decoration: none;
+}
+
+#spell-book-result a:hover {
+	color: #FDB44B;
+}
+
+.spell-book-result-item {
+	margin-bottom: 1em;
+}
+
+.spell-book-result-flex {
+	margin-left: 2%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.spell-book-result-flex a {
+	margin-right: 8px;
+}
+
+.spell-book-result-flex svg {
+	margin-right: 8px;
+}
+
+.spell-book-type-span {
+	font-size: 20px;
+	color: #FDB44B;
+}
+
+.see-spell-book-details {
+	font-size: 28px;
+}
+
+.spell-prepared-toggle, .spell-book-remove {
+	margin-left: 10px;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 300;
+}
+
+.spell-is-prepared, .spell-is-not-prepared {
+	margin-left: 4%;
+	margin-top: 8px;
+	font-style: italic;
+	font-weight: 300;
+	font-size: 24px;
+}
+
+.spell-is-prepared svg, .spell-is-not-prepared svg {
+	margin-right: 8px;
+}
+
+.spell-is-not-prepared {
+	color: rgba(248, 248, 248, 0.500);
+}
+
+.spell-is-prepared {
+	color: palegreen;
+}
+
+#nav {
+	display: flex;
+}
+
+#nav button {
+	margin-right: 15px;
+}
+
+#nav button:hover {
+	padding-left: 22px;
+	padding-right: 22px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	font-size: 18px;
+	border: 2px solid rgba(248, 248, 248, 1);
+	cursor: pointer;
+}
+
+#nav svg {
+	margin-right: 10px;
 }
 
 .add-to-spell-alert {

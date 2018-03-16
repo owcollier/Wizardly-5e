@@ -109,27 +109,233 @@ const renderWizardDetail = function (store) {
 
 const renderSpellBookResults = function (store) {
 
-  const spellBookHeader = ` <h3>Spell Book of <span class="wizard-name">${store.activeWizard.name}</span> - level ${store.activeWizard.level} wizard</h3>
-                            <a href="#" class="spell-book-wizards-detail"><span class="fas fa-info-circle"></span>Wizard Details</a>`;
+  let levelExpr;
+  let preparedStatus;
+  let preparedToggleIcon;
 
-  const listItems = store.spellBookList.map((item) => {
-    // const spellNameFind = function (spell) {
-    //   return spell._id === item.spell_id;
-    // };
+  const spellBookItems = {
+    isEmpty: false,
+    cantrips: [],
+    levelOne: [],
+    levelTwo: [],
+    levelThree: [],
+    levelFour: [],
+    levelFive: [],
+    levelSix: [],
+    levelSeven: [],
+    levelEight: [],
+    levelNine: []
+  };
+
+  const spellBookHeader = `<div class="spell-book-header-name">
+                            <a href="#" class="spell-book-wizards-detail">
+                              <span class="fas fa-info-circle"></span>
+                            </a>
+                            <h1>
+                              <span class="spell-book-wizard-name">${store.activeWizard.name}</span>
+                                level ${store.activeWizard.level} wizard
+                            </h1>
+                          </div>`;
+
+  if (store.spellBookList.length === 0) {
+    spellBookItems.isEmpty = true;
+  }
+
+  store.spellBookList.map((item) => {
+    
     const spellName = store.spellBookListDetails.find(function (spell){
       return spell._id === item.spell_id;
     });
-  
-    return `<li id="${item.spell_id}">
-                <a href="${item.url}" class="see-spell-book-details">${spellName.name}, ${spellName.type}</a>
-                <a href="${item.url}" class="spell-prepared-toggle">Prepare spell</a>
-                <a href="${item.url}" class="spell-book-remove">Remove spell</a>
-                <p>Prepared? : ${item.prepared}</p>
-              </li>`;
+
+    if (item.prepared === true) {
+      preparedStatus = '<div class="spell-is-prepared"><span class="far fa-check-circle"></span>spell prepared</div>';
+      preparedToggleIcon = '<span class="fas fa-toggle-on"></span>';
+    } else {
+      preparedStatus = '<div class="spell-is-not-prepared"><span class="far fa-circle"></span>spell not prepared</div>';
+      preparedToggleIcon = '<span class="fas fa-toggle-off"></span>';
+    }
+
+    levelExpr = spellName.level;
+
+    switch (levelExpr) {
+    case 'cantrip':
+      spellBookItems.cantrips.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '1':
+      spellBookItems.levelOne.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '2':
+      spellBookItems.levelTwo.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '3':
+      spellBookItems.levelThree.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '4':
+      spellBookItems.levelFour.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '5':
+      spellBookItems.levelFive.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '6':
+      spellBookItems.levelSix.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '7':
+      spellBookItems.levelSeven.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '8':
+      spellBookItems.levelEight.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    case '9':
+      spellBookItems.levelNine.push(
+        `<div class="spell-book-result-item">
+                <div class="spell-book-result-flex" id="${item.spell_id}">
+                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
+                </div>
+                ${preparedStatus}
+              </div>`
+      );
+      break;
+    default:
+      console.log('blah blah');
+    }
   });
   
+  //   return `<li id="${item.spell_id}">
+  //               <a href="${item.url}" class="see-spell-book-details">${spellName.name}, ${spellName.type}</a>
+  //               <a href="${item.url}" class="spell-prepared-toggle">Prepare spell</a>
+  //               <a href="${item.url}" class="spell-book-remove">Remove spell</a>
+  //               <p>Prepared? : ${item.prepared}</p>
+  //             </li>`;
+  // });
+  
   $('#spell-book-header').html(spellBookHeader);
-  $('#spell-book-result').empty().append('<ul>').find('ul').append(listItems);
+  $('#spell-book-result-empty').empty();
+  $('#spell-book-result-cantrip').empty();
+  $('#spell-book-result-1').empty();
+  $('#spell-book-result-2').empty();
+  $('#spell-book-result-3').empty();
+  $('#spell-book-result-4').empty();
+  $('#spell-book-result-5').empty();
+  $('#spell-book-result-6').empty();
+  $('#spell-book-result-7').empty();
+  $('#spell-book-result-8').empty();
+  $('#spell-book-result-9').empty();
+  if (spellBookItems.isEmpty === true) {
+    $('#spell-book-result-empty').append('<h4 class="spell-book-level-cat">No spells found...</h4>');
+  }
+  if (spellBookItems.cantrips.length !== 0) {
+    $('#spell-book-result-cantrip').append('<h4 class="spell-book-level-cat">Cantrips</h4>').append(spellBookItems.cantrips);
+  }
+  if (spellBookItems.levelOne.length !== 0) {
+    $('#spell-book-result-1').append('<h4 class="spell-book-level-cat">Level One Spells</h4>').append(spellBookItems.levelOne);
+  }
+  if (spellBookItems.levelTwo.length !== 0) {
+    $('#spell-book-result-2').append('<h4 class="spell-book-level-cat">Level Two Spells</h4>').append(spellBookItems.levelTwo);
+  }
+  if (spellBookItems.levelThree.length !== 0) {
+    $('#spell-book-result-3').append('<h4 class="spell-book-level-cat">Level Three Spells</h4>').append(spellBookItems.levelThree);
+  }
+  if (spellBookItems.levelFour.length !== 0) {
+    $('#spell-book-result-4').append('<h4 class="spell-book-level-cat">Level Four Spells</h4>').append(spellBookItems.levelFour);
+  }
+  if (spellBookItems.levelFive.length !== 0) {
+    $('#spell-book-result-5').append('<h4 class="spell-book-level-cat">Level Five Spells</h4>').append(spellBookItems.levelFive);
+  }
+  if (spellBookItems.levelSix.length !== 0) {
+    $('#spell-book-result-6').append('<h4 class="spell-book-level-cat">Level Six Spells</h4>').append(spellBookItems.levelSix);
+  }
+  if (spellBookItems.levelSeven.length !== 0) {
+    $('#spell-book-result-7').append('<h4 class="spell-book-level-cat">Level Seven Spells</h4>').append(spellBookItems.levelSeven);
+  }
+  if (spellBookItems.levelEight.length !== 0) {
+    $('#spell-book-result-8').append('<h4 class="spell-book-level-cat">Level Eight Spells</h4>').append(spellBookItems.levelEight);
+  }
+  if (spellBookItems.levelNine.length !== 0) {
+    $('#spell-book-result-9').append('<h4 class="spell-book-level-cat">Level Nine Spells</h4>').append(spellBookItems.levelNine);
+  }
 };
 
 const handleCompendium = function (event) {
@@ -356,7 +562,7 @@ const handleSpellBookDetails = function (event) {
   const store = event.data;
   const el = $(event.target);
 
-  const id = el.closest('li').attr('id');
+  const id = el.closest('div').attr('id');
   // console.log(id);
 
   api.spellDetails(id)
@@ -439,7 +645,7 @@ const handleSpellPreparedToggle = function (event) {
   const store = event.data;
   const el = $(event.target);
 
-  const spellId = el.closest('li').attr('id');
+  const spellId = el.closest('div').attr('id');
   const id = store.activeWizard._id;
 
   const document = {
@@ -467,7 +673,7 @@ const handleSpellBookRemove = function (event) {
   const store = event.data;
   const el = $(event.target);
 
-  const spellId = el.closest('li').attr('id');
+  const spellId = el.closest('div').attr('id');
   const id = store.activeWizard._id;
 
   const document = {
