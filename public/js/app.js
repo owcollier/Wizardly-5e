@@ -15,31 +15,129 @@ const renderPage = function (store) {
   }
 };
 
-const renderResults = function (store) {
-  const listItems = store.list.map((item) => {
-    return `<li id="${item._id}">
-                <a href="${item.url}" class="compendiumDetail">${item.name}</a>
-              </li>`;
-  });
-  $('#result').empty().append('<ul>').find('ul').append(listItems);
-};
+// const renderResults = function (store) {
+//   const listItems = store.list.map((item) => {
+//     return `<li id="${item._id}">
+//                 <a href="${item.url}" class="compendiumDetail">${item.name}</a>
+//               </li>`;
+//   });
+//   $('#result').empty().append('<ul>').find('ul').append(listItems);
+// };
+
+// const renderCompendiumSearchResults = function (store) {
+//   //   const listItems = store.compendiumSearchList.map((item) => {
+//   //     return `<li id="${item._id}">
+//   //                 <a href="${item.url}" class="compendiumSearchDetail">${item.name}</a>
+//   //               </li>`;
+//   //   });
+//   //   $('#result').empty().append('<ul>').find('ul').append(listItems);
+//   // };
 
 const renderCompendiumResults = function (store) {
-  const listItems = store.compendiumList.map((item) => {
-    return `<li id="${item._id}">
-                <a href="${item.url}" class="compendiumDetail">${item.name}</a>
-              </li>`;
-  });
-  $('#result').empty().append('<ul>').find('ul').append(listItems);
-};
 
-const renderCompendiumSearchResults = function (store) {
-  const listItems = store.compendiumSearchList.map((item) => {
-    return `<li id="${item._id}">
-                <a href="${item.url}" class="compendiumSearchDetail">${item.name}</a>
-              </li>`;
+  let levelExpr;
+
+  const compendiumList = {
+    cantrips: [],
+    levelOne: [],
+    levelTwo: [],
+    levelThree: [],
+    levelFour: [],
+    levelFive: [],
+    levelSix: [],
+    levelSeven: [],
+    levelEight: [],
+    levelNine: []
+  };
+
+  store.compendiumList.map((item) => {
+    levelExpr = item.level;
+
+    switch (levelExpr) {
+    case 'cantrip':
+      compendiumList.cantrips.push(
+        `<li id="${item._id}" class="compendium-list-item">
+                <a href="#" class="compendiumDetail">${item.name}</a>
+              </li>`
+      );
+      break;
+    case '1':
+      compendiumList.levelOne.push(
+        `<li id="${item._id}" class="compendium-list-item">
+              <a href="#" class="compendiumDetail">${item.name}</a>
+            </li>`
+      );
+      break;
+    case '2':
+      compendiumList.levelTwo.push(
+        `<li id="${item._id}" class="compendium-list-item">
+            <a href="#" class="compendiumDetail">${item.name}</a>
+          </li>`
+      );
+      break;
+    case '3':
+      compendiumList.levelThree.push(
+        `<li id="${item._id}" class="compendium-list-item">
+          <a href="#" class="compendiumDetail">${item.name}</a>
+        </li>`
+      );
+      break;
+    case '4':
+      compendiumList.levelFour.push(
+        `<li id="${item._id}" class="compendium-list-item">
+          <a href="#" class="compendiumDetail">${item.name}</a>
+        </li>`
+      );
+      break;
+    case '5':
+      compendiumList.levelFive.push(
+        `<li id="${item._id}" class="compendium-list-item">
+          <a href="#" class="compendiumDetail">${item.name}</a>
+        </li>`
+      );
+      break;
+    case '6':
+      compendiumList.levelSix.push(
+        `<li id="${item._id}" class="compendium-list-item">
+          <a href="#" class="compendiumDetail">${item.name}</a>
+        </li>`
+      );
+      break;
+    case '7':
+      compendiumList.levelSeven.push(
+        `<li id="${item._id}" class="compendium-list-item">
+          <a href="#" class="compendiumDetail">${item.name}</a>
+        </li>`
+      );
+      break;
+    case '8':
+      compendiumList.levelEight.push(
+        `<li id="${item._id}" class="compendium-list-item">
+          <a href="#" class="compendiumDetail">${item.name}</a>
+        </li>`
+      );
+      break;
+    case '9':
+      compendiumList.levelNine.push(
+        `<li id="${item._id}" class="compendium-list-item">
+        <a href="#" class="compendiumDetail">${item.name}</a>
+      </li>`
+      );
+      break;
+    default:
+      console.log('blah blah');
+    }
   });
-  $('#result').empty().append('<ul>').find('ul').append(listItems);
+  $('#compendiumCantrips').empty().append('<h4 class="spell-book-level-cat">Cantrips</h4>').append('<ul>').find('ul').append(compendiumList.cantrips);
+  $('#compendiumOne').empty().append('<h4 class="spell-book-level-cat">Level One Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelOne);
+  $('#compendiumTwo').empty().append('<h4 class="spell-book-level-cat">Level Two Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelTwo);
+  $('#compendiumThree').empty().append('<h4 class="spell-book-level-cat">Level Three Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelThree);
+  $('#compendiumFour').empty().append('<h4 class="spell-book-level-cat">Level Four Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelFour);
+  $('#compendiumFive').empty().append('<h4 class="spell-book-level-cat">Level Five Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelFive);
+  $('#compendiumSix').empty().append('<h4 class="spell-book-level-cat">Level Six Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelSix);
+  $('#compendiumSeven').empty().append('<h4 class="spell-book-level-cat">Level Seven Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelSeven);
+  $('#compendiumEight').empty().append('<h4 class="spell-book-level-cat">Level Eight Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelEight);
+  $('#compendiumNine').empty().append('<h4 class="spell-book-level-cat">Level Nine Spells</h4>').append('<ul>').find('ul').append(compendiumList.levelNine);
 };
 
 const renderWizardsResults = function (store) {
@@ -87,9 +185,13 @@ const renderDetail = function (store) {
 const renderSpellBookDetail = function (store) {
   const el = $('#spell-book-detail');
   const item = store.item;
+  let atHigherLevels = item.higher_levels;
+  if (!item.higher_levels) {
+    atHigherLevels = 'None';
+  }
   el.find('.name').text(item.name);
   el.find('.description').text(item.description);
-  el.find('.higher-levels').text(item.higher_levels);
+  el.find('.higher-levels').text(atHigherLevels);
   el.find('.casting-time').text(item.casting_time);
   el.find('.duration').text(item.duration);
   el.find('.range').text(item.range);
@@ -427,27 +529,6 @@ const handleWizards = function (event) {
       console.error(err);
     });
 };
-
-// const handleCreate = function (event) {
-//   event.preventDefault();
-//   const store = event.data;
-//   const el = $(event.target);
-
-//   const document = {
-//     title: el.find('[name=title]').val(),
-//     content: el.find('[name=content]').val()
-//   };
-//   api.create(document)
-//     .then(response => {
-//       store.item = response;
-//       store.list = null; //invalidate cached list results
-//       renderDetail(store);
-//       store.view = 'compendiumDetail';
-//       renderPage(store);
-//     }).catch(err => {
-//       console.error(err);
-//     });
-// };
 
 const handleCreateWizard = function (event) {
   event.preventDefault();
@@ -815,7 +896,7 @@ jQuery(function ($) {
   $('#home').on('click', '.viewCreateWizard', STORE, handleViewCreateWizard);
 
   // compendium related listeners 
-  $('#result').on('click', '.compendiumDetail', STORE, handleCompendiumDetails);
+  $('#compendiumSpells').on('click', '.compendiumDetail', STORE, handleCompendiumDetails);
   $('#compendiumOfSpells').on('click', '.this-spell-book', STORE, handleSpellBook);
   $('#compendiumDetail').on('click', '.back-to-compendium', STORE, handleViewCompendium);
   $('#compendiumDetail').on('click', '.add-to-spell-book', STORE, handleAddSpell);

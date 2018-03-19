@@ -66,13 +66,23 @@
 
 	<section id="compendiumOfSpells" class="view">
 		<div id="spellList">
-			<fieldset><legend>Click on a spell to view details and add to spell book</legend>
-				<div id="result"></div>
-				<ul id="nav">
-					<li>
-						<a href="" class="this-spell-book">&lt; Back to spell book</a>
-					</li>
-				</ul>
+			<fieldset>
+				<legend>Select a spell to view details and add to spell book</legend>
+				<div id="compendiumSpells">
+						<div id="compendiumCantrips"></div>
+						<div id="compendiumOne"></div>
+						<div id="compendiumTwo"></div>
+						<div id="compendiumThree"></div>
+						<div id="compendiumFour"></div>
+						<div id="compendiumFive"></div>
+						<div id="compendiumSix"></div>
+						<div id="compendiumSeven"></div>
+						<div id="compendiumEight"></div>
+						<div id="compendiumNine"></div>
+				</div>
+				<div id="nav">
+					<button type="submit" class="this-spell-book"><span class="fas fa-chevron-left"></span>Back to Spell Book</button>
+				</div>
 			</fieldset>
 		</div>
 	</section>
@@ -119,7 +129,8 @@
 
 	<section id="wizardDetail" class="view">
 		<div id="wizardDetails">
-			<fieldset><legend>Wizard Details</legend>
+			<fieldset>
+				<legend>Wizard Details</legend>
 				<label for="name">Name:</label>
 				<span class="name"></span>
 				<label for="level">Level:</label>
@@ -130,14 +141,17 @@
 				<span class="intelligence-modifier"></span>
 				<label for="max-prepared">Max prepared spells:</label>
 				<span class="max-prepared"></span>
-				<button type="submit" class="view-edit-wizard">Edit</button>
-				<button type="submit" class="delete-wizard">Delete</button>
-				<button type="submit" class="this-spell-book">Go Back</button>
+				<div id="nav">
+					<button type="submit" class="view-edit-wizard"><span class="fas fa-edit"></span>Edit</button>
+					<button type="submit" class="delete-wizard"><span class="far fa-trash-alt"></span>Delete</button>
+					<button type="submit" class="this-spell-book"><span class="fas fa-chevron-left"></span>Back to Spell Book</button>
+				</div>
 			</fieldset>
 		</div>
 	</section>
 
 	<form id="createWizard" class="view">
+		<fieldset>
 			<legend>Create a wizard</legend>
 			<div>
 				<label for="name">Wizard name:</label>
@@ -151,10 +165,11 @@
 				<label for="intelligence">Intelligence score:</label>
 				<input type="number" name="intelligence" min="1" max="30">
 			</div>
-			<div class="create-wizard-buttons">
-				<button type="submit" class="createWizardNow">Create</button>
-				<button type="submit" class="viewWizards">Back to Roster</button>
+			<div id="nav">
+				<button type="submit" class="createWizardNow"><span class="fas fa-edit"></span>Create</button>
+				<button type="submit" class="viewWizards"><span class="fas fa-chevron-left"></span>Back to All Wizards</button>
 			</div>
+		</fieldset>
 	</form>
 
 	<form id="edit-wizard" class="view">
@@ -172,8 +187,10 @@
 				<label for="intelligence">Intelligence score:</label>
 				<input type="number" name="intelligence" min="1" max="30">
 			</div>
-			<button type="submit" class="updateWizardNow">Update</button>
-			<button type="submit" class="spell-book-wizards-detail">Go Back</button>
+			<div id="nav">
+				<button type="submit" class="updateWizardNow"><span class="fas fa-edit"></span>Update</button>
+				<button type="submit" class="spell-book-wizards-detail"><span class="fas fa-chevron-left"></span>Go Back</button>
+			</div>
 		</fieldset>
 	</form>
 
@@ -218,26 +235,23 @@
 				<legend>Spell Detail</legend>
 					<label for="name">Name:</label>
 					<span class="name"></span>
-					<p><label for="type">Type:</label>
+					<label for="type">Type:</label>
 					<span class="type"></span>
-					<p><label for="casting-time">Casting time:</label>
+					<label for="casting-time">Casting time:</label>
 					<span class="casting-time"></span>
 					<label for="duration">Duration:</label>
 					<span class="duration"></span>
-					<p><label for="range">Range:</label>
+					<label for="range">Range:</label>
 					<span class="range"></span>
 					<label for="components">Components:</label>
 					<span class="components"></span>
-					<p><label for="description">Description:</label>
+					<label for="description">Description:</label>
 					<span class="description"></span>
-					<p><label for="higher-levels">At higher levels:</label>
+					<label for="higher-levels">At higher levels:</label>
 					<span class="higher-levels"></span>
-				<br/>
-				<ul id="nav">
-					<li>
-						<a href="" class="my-spell-book">&lt; Go back</a>
-					</li>
-				</ul>
+				<div id="nav">
+					<button type="submit" class="my-spell-book"><span class="fas fa-chevron-left"></span>Back to Spell Book</button>
+				</div>
 			</fieldset>
 		</div>
 	</section>

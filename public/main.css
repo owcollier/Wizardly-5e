@@ -20,6 +20,34 @@ button {
 	border-radius: 24px;
 }
 
+fieldset {
+	background-color: rgba(35, 16, 58, 0.200);
+	border: 4px solid rgba(255,82,82,0.87);
+	border-radius: 12px;
+}
+
+#nav {
+	display: flex;
+}
+
+#nav button {
+	margin-right: 15px;
+}
+
+#nav button:hover {
+	padding-left: 22px;
+	padding-right: 22px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	font-size: 18px;
+	border: 2px solid rgba(248, 248, 248, 1);
+	cursor: pointer;
+}
+
+#nav svg {
+	margin-right: 10px;
+}
+
 .view {
 	color: #F8F8F8;
 	padding: 20px;
@@ -220,6 +248,91 @@ button {
 	font-family: 'Caudex', serif;
 }
 
+/* wizard detail styles */
+
+#wizardDetails legend {
+	font-family: 'Caudex', serif;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+
+#wizardDetails label {
+	font-family: 'Caudex', serif;
+	color: #FDB44B;
+	display: block;
+	font-size: 20px;
+	border-bottom: 1px solid #F8F8F8;
+}
+
+#wizardDetails span {
+	display: block;
+	font-size:24px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+/* edit wizard styles */
+
+#edit-wizard legend {
+	font-family: 'Caudex', serif;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+
+#edit-wizard label {
+	font-family: 'Caudex', serif;
+	color: #FDB44B;
+	display: block;
+	font-size: 20px;
+	border-bottom: 1px solid #F8F8F8;
+}
+
+#edit-wizard span {
+	display: block;
+	font-size:24px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+#edit-wizard input {
+	font-size: 20px;
+	border-radius: 12px;
+	padding: 8px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/* create wizard styles */
+
+#createWizard legend {
+	font-family: 'Caudex', serif;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+
+#createWizard label {
+	font-family: 'Caudex', serif;
+	color: #FDB44B;
+	display: block;
+	font-size: 20px;
+	border-bottom: 1px solid #F8F8F8;
+}
+
+#createWizard span {
+	display: block;
+	font-size:24px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+#createWizard input {
+	font-size: 20px;
+	border-radius: 12px;
+	padding: 8px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
 /* spell book styles */
 
 #spell-book h1 {
@@ -349,26 +462,55 @@ button {
 	color: palegreen;
 }
 
-#nav {
-	display: flex;
+/* spell book details styles */
+
+#spell-book-details legend {
+	font-family: 'Caudex', serif;
+	font-size: 36px;
+	margin-bottom: 30px;
 }
 
-#nav button {
-	margin-right: 15px;
+#spell-book-details label {
+	font-family: 'Caudex', serif;
+	color: #FDB44B;
+	display: block;
+	font-size: 20px;
+	border-bottom: 1px solid #F8F8F8;
 }
 
-#nav button:hover {
-	padding-left: 22px;
-	padding-right: 22px;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	font-size: 18px;
-	border: 2px solid rgba(248, 248, 248, 1);
-	cursor: pointer;
+#spell-book-details span {
+	display: block;
+	font-size:24px;
+	margin-top: 5px;
+	margin-bottom: 15px;
 }
 
-#nav svg {
-	margin-right: 10px;
+/* spell search/compendium search styles */
+
+#spellList legend {
+	font-family: 'Caudex', serif;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+
+#spellList h4 {
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.compendium-list-item {
+	margin-left: 2em;
+	margin-bottom: 5px;
+	font-size: 24px;
+}
+
+.compendium-list-item a:hover {
+	color: #FDB44B;
+}
+
+.compendiumDetail {
+	text-decoration: none;
+	color: #F8F8F8;
 }
 
 .add-to-spell-alert {
