@@ -28,6 +28,7 @@ fieldset {
 
 #nav {
 	display: flex;
+	align-items: center;
 }
 
 #nav button {
@@ -513,19 +514,38 @@ fieldset {
 	color: #F8F8F8;
 }
 
+/* compendium search details styles */
+
+#spellDetails legend {
+	font-family: 'Caudex', serif;
+	font-size: 36px;
+	margin-bottom: 30px;
+}
+
+#spellDetails label {
+	font-family: 'Caudex', serif;
+	color: #FDB44B;
+	display: block;
+	font-size: 20px;
+	border-bottom: 1px solid #F8F8F8;
+}
+
+#spellDetails span {
+	display: block;
+	font-size:24px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
 .add-to-spell-alert {
+	margin-right: 15px;
   color: palegreen;
   /* -webkit-animation: flash linear 2s infinite;
 	animation: flash linear 2s infinite; */
 }
 
-/* @-webkit-keyframes flash {
-	0% { opacity: 1; } 
-	50% { opacity: .1; } 
-	100% { opacity: 1; }
+
+
+@media (max-width: 720px) {
+
 }
-@keyframes flash {
-	0% { opacity: 1; } 
-	50% { opacity: .1; } 
-	100% { opacity: 1; }
-} */

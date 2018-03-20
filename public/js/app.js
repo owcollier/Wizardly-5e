@@ -161,6 +161,10 @@ const renderWizardEdit = function (store) {
 const renderDetail = function (store) {
   const el = $('#compendiumDetail');
   const item = store.item;
+  let atHigherLevels = item.higher_levels;
+  if (!item.higher_levels) {
+    atHigherLevels = 'None';
+  }
 
   $('.add-to-spell-book').show();
   $('.add-to-spell-alert').hide();
@@ -174,7 +178,7 @@ const renderDetail = function (store) {
 
   el.find('.name').text(item.name);
   el.find('.description').text(item.description);
-  el.find('.higher-levels').text(item.higher_levels);
+  el.find('.higher-levels').text(atHigherLevels);
   el.find('.casting-time').text(item.casting_time);
   el.find('.duration').text(item.duration);
   el.find('.range').text(item.range);
@@ -927,6 +931,5 @@ jQuery(function ($) {
   $(document).on('click', '.viewHome', STORE, handleViewHome);
 
   // start app by viewing the home page
-  // $('#search').trigger('submit');
   $('.viewHome').trigger('click');
 });

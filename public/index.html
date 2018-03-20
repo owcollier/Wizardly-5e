@@ -93,30 +93,28 @@
 				<legend>Spell Detail</legend>
 					<label for="name">Name:</label>
 					<span class="name"></span>
-					<p><label for="type">Type:</label>
+					<label for="type">Type:</label>
 					<span class="type"></span>
-					<p><label for="casting-time">Casting time:</label>
+					<label for="casting-time">Casting time:</label>
 					<span class="casting-time"></span>
 					<label for="duration">Duration:</label>
 					<span class="duration"></span>
-					<p><label for="range">Range:</label>
+					<label for="range">Range:</label>
 					<span class="range"></span>
 					<label for="components">Components:</label>
 					<span class="components"></span>
-					<p><label for="description">Description:</label>
+					<label for="description">Description:</label>
 					<span class="description"></span>
-					<p><label for="higher-levels">At higher levels:</label>
+					<label for="higher-levels">At higher levels:</label>
 					<span class="higher-levels"></span>
 				<br/>
-				<ul id="nav">
-					<li>
-						<a href="" class="add-to-spell-book">Add to spell book</a>
-						<span class="add-to-spell-alert"><i class="fas fa-check"></i>Spell already in spell book</span>
-					</li>
-					<li>
-						<a href="" class="back-to-compendium">&lt; Back to spell search</a>
-					</li>
-				</ul>
+				<div id="nav">
+					<button type="submit" class="add-to-spell-book"><span class="fas fa-plus"></span>Add to spell book</button>
+					<div class="add-to-spell-alert">
+						<span><i class="fas fa-check"></i>Spell already in spell book</span>
+					</div>
+					<button type="submit" class="back-to-compendium"><span class="fas fa-chevron-left"></span>Back to spell search</button>
+				</div>
 			</fieldset>
 		</div>
 	</section>
@@ -217,17 +215,6 @@
 				</div>
 		</div>
 	</section>
-
-	<!-- <section id="spell-book-compendium-search" class="view">
-		<div id="spell-book-compendium-search-List">
-			<fieldset><legend>Choose a spell</legend>
-				<div id="result"></div>
-				<ul id="nav">
-					<li> </li><a href="" class="my-spell-book">&lt; Go back</a>
-				</ul>
-			</fieldset>
-		</div>
-	</section> -->
 
 	<section id="spell-book-detail" class="view">
 		<div id="spell-book-details">
