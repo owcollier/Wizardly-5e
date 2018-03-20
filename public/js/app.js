@@ -268,8 +268,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.cantrips.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -280,8 +280,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelOne.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -292,8 +292,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelTwo.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -304,8 +304,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelThree.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -316,8 +316,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelFour.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -328,8 +328,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelFive.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -340,8 +340,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelSix.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -352,8 +352,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelSeven.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -364,8 +364,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelEight.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
@@ -376,8 +376,8 @@ const renderSpellBookResults = function (store) {
       spellBookItems.levelNine.push(
         `<div class="spell-book-result-item">
                 <div class="spell-book-result-flex" id="${item.spell_id}">
-                  <a href="${item.url}" class="see-spell-book-details">${spellName.name} <span class="spell-book-type-span">~ ${spellName.type}</span></a> |
-                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a> |
+                  <a href="${item.url}" class="see-spell-book-details"><span class="spell-book-name-span">${spellName.name}</span><span class="spell-book-type-span">${spellName.type}</span></a>
+                  <a href="${item.url}" class="spell-prepared-toggle">Prepare spell ${preparedToggleIcon}</a>
                   <a href="${item.url}" class="spell-book-remove">Remove spell <span class="fas fa-minus-circle"></span></a>
                 </div>
                 ${preparedStatus}
