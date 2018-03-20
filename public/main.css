@@ -548,4 +548,73 @@ fieldset {
 
 @media (max-width: 720px) {
 
+	/* mobile styles general */
+
+	.header-nav {
+		display: flex;
+		justify-content: center;
+	}
+
+	/* mobile styles landing page */
+
+	.landing-title {
+		font-size: 36px;
+		margin-bottom: 15px;
+	}
+
+	.landing-tag-line {
+		font-size: 16px;
+	}
+
+	.app-description-flex {
+		display: block;
+		border: 1px solid #F8F8F8;
+		border-radius: 8px;
+		height: 300px;
+		overflow: scroll;
+	}
+
+	.app-description-flex-row {
+		flex-direction: column;
+	}
+	
+	.app-description-flex-row-detail {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	
+	.app-description-flex-row-detail h4 {
+		border-bottom: none;
+		font-size: 18px;
+		margin-top: 0.5em;
+		margin-left: 0;
+		max-width: 100%;
+	}
+	
+	.app-description-flex-row-detail span {
+		font-size: 16px;
+		margin-bottom: 0.5em;
+	}
+	
+	.quick-start {
+		font-size: 30px;
+	}
+
+	.disclaimer {
+		flex-direction: column;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.fine-print {
+		order: 1;
+		font-size: 12px;
+	}
+
+	.wiz-logo {
+		order: 2;
+		font-size: 64px;
+	}
+
 }
