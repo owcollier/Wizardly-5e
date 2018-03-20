@@ -547,6 +547,10 @@ fieldset {
 
 	/* mobile styles general */
 
+	#nav {
+		justify-content: center;
+	}
+
 	.header-nav {
 		display: flex;
 		justify-content: center;
@@ -566,7 +570,7 @@ fieldset {
 	.app-description-flex {
 		display: block;
 		border: 1px solid #F8F8F8;
-		border-radius: 8px;
+		border-radius: 12px;
 		height: 300px;
 		overflow: scroll;
 	}
@@ -612,6 +616,26 @@ fieldset {
 	.wiz-logo {
 		order: 2;
 		font-size: 64px;
+	}
+
+	/* mobile styles wizard roster */
+
+	#wizards h4 {
+		font-size: 24px;
+		text-align: center;
+	}
+
+	#allWizards a {
+		font-size: 16px;
+	}
+
+	#allWizards li {
+		list-style-type: disc;
+		margin-bottom: 15px;
+	}
+
+	.wizard-name {
+		font-size: 20px;
 	}
 
 }
