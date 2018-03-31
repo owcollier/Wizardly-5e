@@ -664,94 +664,129 @@ fieldset {
 		margin-bottom: 15px;
 	}
 
+	#wizardDetails span {
+		font-size: 18px;
+	}
+
 	/* mobile edit wizard styles */
 
-#edit-wizard legend {
-	font-size: 24px;
-	margin-bottom: 15px;
-}
+	#edit-wizard legend {
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
 
-/* mobile create wizard styles */
+	/* mobile create wizard styles */
 
-#createWizard legend {
-	font-size: 24px;
-	margin-bottom: 15px;
-}
+	#createWizard legend {
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
 
-/* mobile spell book styles */
+	/* mobile spell book styles */
 
-#spell-book h1 {
-	font-size: 18px;
-}
+	#spell-book h1 {
+		font-size: 18px;
+	}
 
-#spell-book h3 {
-	font-size: 24px;
-}
+	#spell-book h3 {
+		font-size: 24px;
+	}
 
-#spell-book-result {
-	height: 60vh;
-	overflow: scroll;
-	border: 4px solid rgba(255,82,82,0.87);
-	border-radius: 12px;
-	background-color: rgba(35, 16, 58, 0.200);
-	margin-bottom: 2%;
-}
+	#spell-book-result {
+		height: 60vh;
+		overflow: scroll;
+		border: 4px solid rgba(255,82,82,0.87);
+		border-radius: 12px;
+		background-color: rgba(35, 16, 58, 0.200);
+		margin-bottom: 2%;
+	}
 
-.spell-book-header-name a {
-	font-size: 24px;
-}
+	.spell-book-header-name a {
+		font-size: 24px;
+	}
 
-.spell-book-wizard-name {
-	font-size: 28px;
-}
+	.spell-book-wizard-name {
+		font-size: 28px;
+	}
 
-.spell-book-level-cat {
-	font-size: 20px;
-	margin-left: 0;
-	margin-right: 0;
-	margin-bottom: 10px;
-	padding-left: 2%;
-}
+	.spell-book-level-cat {
+		font-size: 20px;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 10px;
+		padding-left: 2%;
+	}
 
-.spell-book-name-span {
-	font-size: 24px;
-}
+	.spell-book-name-span {
+		font-size: 24px;
+	}
 
-#spell-book-result a {
-	font-size: 18px;
-	margin-bottom: 8px;
-}
+	#spell-book-result a {
+		font-size: 18px;
+		margin-bottom: 8px;
+	}
 
-.spell-book-result-flex {
-	margin-left: 2%;
-	display: flex;
-	flex-direction: column;
-	align-items: baseline;
-}
+	.spell-book-result-flex {
+		margin-left: 2%;
+		display: flex;
+		flex-direction: column;
+		align-items: baseline;
+	}
 
-.spell-book-result-flex a {
-	margin-right: 8px;
-}
+	.spell-book-result-flex a {
+		margin-right: 8px;
+	}
 
-.spell-book-result-flex svg {
-	margin-right: 8px;
-}
+	.spell-book-result-flex svg {
+		margin-right: 8px;
+	}
 
-.spell-book-type-span {
-	font-size: 14px;
-	color: #FDB44B;
-}
+	.spell-book-type-span {
+		font-size: 14px;
+		color: #FDB44B;
+	}
 
-.see-spell-book-details {
-	font-size: 28px;
-}
+	.see-spell-book-details {
+		font-size: 28px;
+	}
 
-.spell-prepared-toggle, .spell-book-remove {
-	font-size: 12px;
-}
+	.spell-prepared-toggle, .spell-book-remove {
+		font-size: 12px;
+	}
 
-.spell-is-prepared, .spell-is-not-prepared {
-	font-size: 18px;
-}
+	.spell-is-prepared, .spell-is-not-prepared {
+		font-size: 18px;
+	}
 
+	/* mobile compendium search styles */
+
+	#compendiumOfSpells legend {
+		font-size: 24px;
+	}
+
+	.compendium-list-item {
+		font-size: 18px;
+		margin-left: 0;
+		margin-top: 1em;
+	}
+
+	/* mobile spell detail styles */
+
+	#spellDetails legend {
+		font-size: 24px;
+	}
+
+	#spellDetails span {
+		font-size: 18px;
+	}
+
+	/* mobile spell book detail styles */
+
+	#spell-book-details legend {
+		font-size: 24px;
+	}
+
+	#spell-book-details span {
+		font-size: 18px;
+	}
 }
