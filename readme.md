@@ -21,7 +21,7 @@ Wizardly 5e maintains a RESTful API on the back end for exposing all resources r
 
 The database for Wizardly 5e contains two collections: **Wizards** and **Spells**
 
- * All Wizards related requests work off of the **/api/v1/wizards** endpoint - GET, POST, PUT, and DELETE requests    are supported by this endpoint, where **/api/v1/wizards/:id** can be used to expose an indivudal wizard by id     and **/api/v1/wizards/:id/spellbook** can be pinged to expose an individual wizard's spell book
+ * All Wizards related requests work off of the **/api/v1/wizards** endpoint - GET, POST, PUT, and DELETE requests    are supported by this endpoint, where **/api/v1/wizards/:id** can be used to expose an indivudal wizard by id     and **/api/v1/wizards/:id/spellbook** can be pinged to expose an individual wizard's spell book.
 
  * Spells data is exposed via the **api/v1/spells** endpoint for all spells and the **api/v1/spells/:id** endpoint    for individual spells. Only GET requests are supported for spells in the Wizardly 5e API, as this app is          intended to provide official 5th edition D&D spells as a static resource for inspecting, adding to, or
     removing from the wizard's spell book.
