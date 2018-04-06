@@ -11,7 +11,6 @@ const renderPage = function (store) {
   } else {
     $('.view').hide();
     $(`#${store.view}`).show();
-    console.log(store.view);
   }
 };
 
@@ -142,7 +141,6 @@ const renderCompendiumResults = function (store) {
 
 const renderWizardsResults = function (store) {
   const listItems = store.wizardsList.map((item) => {
-    // console.log(item.url);
     return `<li id="${item._id}">
                 <a href="${item.url}" class="this-spell-book"><span class="wizard-name">${item.name}</span> level ${item.level} wizard</a>
               </li>`;
@@ -546,7 +544,6 @@ const handleCreateWizard = function (event) {
   };
   api.wizardCreate(document)
     .then(response => {
-      console.log('create wiz response:', response);
       store.item = response;
       store.wizardsList = null; //invalidate cached list results
       store.activeWizard = response;
@@ -631,7 +628,6 @@ const handleWizardRemove = function (event) {
   event.preventDefault();
   const store = event.data;
   const id = store.item._id;
-  // console.log(store);
   api.wizardRemove(id, store.token)
     .then(() => {
       store.wizardsList = null; //invalidate cached list results
@@ -648,7 +644,6 @@ const handleSpellBookDetails = function (event) {
   const el = $(event.target);
 
   const id = el.closest('div').attr('id');
-  // console.log(id);
 
   api.spellDetails(id)
     .then(response => {
@@ -739,7 +734,6 @@ const handleSpellPreparedToggle = function (event) {
 
   api.spellBookToggle(id, document)
     .then((response) => {
-      console.log('response', response);
       store.spellBookList = response.spellBook;
      
       renderSpellBookResults(store);
@@ -802,11 +796,7 @@ const handleSpellBook = function (event) {
   const store = event.data;
   const el = $(event.target);
 
-  // console.log(store.activeWizard._id);
-  console.log('id?', store.activeWizard._id);
   const id = store.activeWizard._id || el.closest('li').attr('id');
-  // store.activeWizardId = el.closest('li').attr('id');
-  // console.log(store.activeWizardId);
   const detailsPromises = [];
 
   api.wizardDetails(id)
