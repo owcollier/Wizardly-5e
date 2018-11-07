@@ -505,8 +505,8 @@ fieldset {
 
 #spellList h1 {
 	font-family: 'Caudex', serif;
-	font-size: 36px;
-	margin-bottom: 30px;
+	font-size: 24px;
+	margin: 0.5em 0;
 }
 
 #spellList h4 {
@@ -780,6 +780,10 @@ fieldset {
 
 	#compendiumOfSpells legend {
 		font-size: 24px;
+	}
+
+	#spellList h1 {
+		font-size: 18px;
 	}
 
 	#compendiumSpells ul {
