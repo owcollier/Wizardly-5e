@@ -57,34 +57,42 @@ const renderCompendiumResults = function (store) {
     case 'cantrip':
       compendiumList.cantrips.push(
         `<li id="${item._id}" class="compendium-list-item">
+          <div>
             <a href="#" class="compendium-detail">${item.name}</a>
-            <span class="compendium-detail-separator"> // </span>
-            <span class="compendium-detail-type">${item.type}</span>
-          </li>`
+          </div>
+          <span class="compendium-detail-separator"> // </span>
+          <span class="compendium-detail-type">${item.type}</span>
+        </li>`
       );
       break;
     case '1':
       compendiumList.levelOne.push(
         `<li id="${item._id}" class="compendium-list-item">
+          <div>
             <a href="#" class="compendium-detail">${item.name}</a>
-            <span class="compendium-detail-separator"> // </span>
-            <span class="compendium-detail-type">${item.type}</span>
-          </li>`
+          </div>
+          <span class="compendium-detail-separator"> // </span>
+          <span class="compendium-detail-type">${item.type}</span>
+        </li>`
       );
       break;
     case '2':
       compendiumList.levelTwo.push(
         `<li id="${item._id}" class="compendium-list-item">
+          <div>
             <a href="#" class="compendium-detail">${item.name}</a>
-            <span class="compendium-detail-separator"> // </span>
-            <span class="compendium-detail-type">${item.type}</span>
-          </li>`
+          </div>
+          <span class="compendium-detail-separator"> // </span>
+          <span class="compendium-detail-type">${item.type}</span>
+        </li>`
       );
       break;
     case '3':
       compendiumList.levelThree.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
+            <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
           <span class="compendium-detail-separator"> // </span>
           <span class="compendium-detail-type">${item.type}</span>
         </li>`
@@ -93,7 +101,9 @@ const renderCompendiumResults = function (store) {
     case '4':
       compendiumList.levelFour.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
+            <a href="#" class="compendium-detail">${item.name}</a>
+          </div>
           <span class="compendium-detail-separator"> // </span>
           <span class="compendium-detail-type">${item.type}</span>
         </li>`
@@ -102,7 +112,9 @@ const renderCompendiumResults = function (store) {
     case '5':
       compendiumList.levelFive.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
+            <a href="#" class="compendium-detail">${item.name}</a>
+          </div>
           <span class="compendium-detail-separator"> // </span>
           <span class="compendium-detail-type">${item.type}</span>
         </li>`
@@ -111,7 +123,9 @@ const renderCompendiumResults = function (store) {
     case '6':
       compendiumList.levelSix.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
+            <a href="#" class="compendium-detail">${item.name}</a>
+          </div>
           <span class="compendium-detail-separator"> // </span>
           <span class="compendium-detail-type">${item.type}</span>
         </li>`
@@ -120,7 +134,9 @@ const renderCompendiumResults = function (store) {
     case '7':
       compendiumList.levelSeven.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
+            <a href="#" class="compendium-detail">${item.name}</a>
+          </div>
           <span class="compendium-detail-separator"> // </span>
           <span class="compendium-detail-type">${item.type}</span>
         </li>`
@@ -129,7 +145,9 @@ const renderCompendiumResults = function (store) {
     case '8':
       compendiumList.levelEight.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
+            <a href="#" class="compendium-detail">${item.name}</a>
+          </div>
           <span class="compendium-detail-separator"> // </span>
           <span class="compendium-detail-type">${item.type}</span>
         </li>`
@@ -138,7 +156,9 @@ const renderCompendiumResults = function (store) {
     case '9':
       compendiumList.levelNine.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendium-detail">${item.name}</a>
+          <div>
+            <a href="#" class="compendium-detail">${item.name}</a>
+          </div>
           <span class="compendium-detail-separator"> // </span>
           <span class="compendium-detail-type">${item.type}</span>
         </li>`
