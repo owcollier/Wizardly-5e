@@ -533,6 +533,16 @@ fieldset {
 .compendium-detail {
 	text-decoration: none;
 	color: #F8F8F8;
+
+	font-weight: 600;
+}
+
+.compendium-detail-separator {
+	color: rgba(255,82,82,0.87);
+}
+
+.compendium-detail-type {
+	font-weight: 300;
 }
 
 /* compendium search details styles */
