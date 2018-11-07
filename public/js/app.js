@@ -51,7 +51,6 @@ const renderCompendiumResults = function (store) {
 
   store.compendiumList.map((item) => {
     levelExpr = item.level;
-    console.log(item);
 
     switch (levelExpr) {
     case 'cantrip':
