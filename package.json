@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "baconjs": "^2.0.9",
     "body-parser": "^1.18.3",
     "chair": "0.0.0",
     "dotenv": "^4.0.0",
