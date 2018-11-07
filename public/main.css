@@ -493,6 +493,8 @@ fieldset {
 	padding-top: 1em;
 	padding-bottom: 1em;
 
+	margin-bottom: 1em;
+
 	border: 4px solid rgba(255,82,82,0.87);
 	border-radius: 12px;
 	background-color: rgba(35, 16, 58, 0.200);
@@ -757,21 +759,6 @@ fieldset {
 		margin-bottom: 8px;
 	}
 
-	.spell-book-result-flex {
-		margin-left: 2%;
-		display: flex;
-		flex-direction: column;
-		align-items: baseline;
-	}
-
-	.spell-book-result-flex a {
-		margin-right: 8px;
-	}
-
-	.spell-book-result-flex svg {
-		margin-right: 8px;
-	}
-
 	.spell-book-type-span {
 		font-size: 14px;
 		color: #FDB44B;
@@ -824,4 +811,14 @@ fieldset {
 	#spell-book-details span {
 		font-size: 18px;
 	}
+}
+
+@media (max-width: 370px) {
+
+	.spell-book-result-flex {
+
+    flex-direction: column;
+    /* align-items: baseline; */
+	}
+
 }
