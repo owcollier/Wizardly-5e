@@ -51,75 +51,76 @@ const renderCompendiumResults = function (store) {
 
   store.compendiumList.map((item) => {
     levelExpr = item.level;
+    console.log(item);
 
     switch (levelExpr) {
     case 'cantrip':
       compendiumList.cantrips.push(
         `<li id="${item._id}" class="compendium-list-item">
-                <a href="#" class="compendiumDetail">${item.name}</a>
+                <a href="#" class="compendium-detail">${item.name}</a>
               </li>`
       );
       break;
     case '1':
       compendiumList.levelOne.push(
         `<li id="${item._id}" class="compendium-list-item">
-              <a href="#" class="compendiumDetail">${item.name}</a>
+              <a href="#" class="compendium-detail">${item.name}</a>
             </li>`
       );
       break;
     case '2':
       compendiumList.levelTwo.push(
         `<li id="${item._id}" class="compendium-list-item">
-            <a href="#" class="compendiumDetail">${item.name}</a>
+            <a href="#" class="compendium-detail">${item.name}</a>
           </li>`
       );
       break;
     case '3':
       compendiumList.levelThree.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendiumDetail">${item.name}</a>
+          <a href="#" class="compendium-detail">${item.name}</a>
         </li>`
       );
       break;
     case '4':
       compendiumList.levelFour.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendiumDetail">${item.name}</a>
+          <a href="#" class="compendium-detail">${item.name}</a>
         </li>`
       );
       break;
     case '5':
       compendiumList.levelFive.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendiumDetail">${item.name}</a>
+          <a href="#" class="compendium-detail">${item.name}</a>
         </li>`
       );
       break;
     case '6':
       compendiumList.levelSix.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendiumDetail">${item.name}</a>
+          <a href="#" class="compendium-detail">${item.name}</a>
         </li>`
       );
       break;
     case '7':
       compendiumList.levelSeven.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendiumDetail">${item.name}</a>
+          <a href="#" class="compendium-detail">${item.name}</a>
         </li>`
       );
       break;
     case '8':
       compendiumList.levelEight.push(
         `<li id="${item._id}" class="compendium-list-item">
-          <a href="#" class="compendiumDetail">${item.name}</a>
+          <a href="#" class="compendium-detail">${item.name}</a>
         </li>`
       );
       break;
     case '9':
       compendiumList.levelNine.push(
         `<li id="${item._id}" class="compendium-list-item">
-        <a href="#" class="compendiumDetail">${item.name}</a>
+        <a href="#" class="compendium-detail">${item.name}</a>
       </li>`
       );
       break;
