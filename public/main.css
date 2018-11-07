@@ -493,8 +493,9 @@ fieldset {
 	padding-top: 1em;
 	padding-bottom: 1em;
 
-	border: 2px solid rgba(255,82,82,0.87);
-	border-radius: 8px;
+	border: 4px solid rgba(255,82,82,0.87);
+	border-radius: 12px;
+	background-color: rgba(35, 16, 58, 0.200);
 
 	height: 70vh;
 	overflow: scroll;
