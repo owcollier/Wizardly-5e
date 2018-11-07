@@ -488,7 +488,19 @@ fieldset {
 
 /* spell search/compendium search styles */
 
-#spellList legend {
+#compendiumSpells {
+
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	border: 2px solid rgba(255,82,82,0.87);
+	border-radius: 8px;
+
+	height: 70vh;
+	overflow: scroll;
+}
+
+#spellList h1 {
 	font-family: 'Caudex', serif;
 	font-size: 36px;
 	margin-bottom: 30px;

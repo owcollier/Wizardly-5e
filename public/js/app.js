@@ -891,7 +891,7 @@ jQuery(function ($) {
   $('#home').on('click', '.viewCreateWizard', STORE, handleViewCreateWizard);
 
   // compendium related listeners 
-  $('#compendiumSpells').on('click', '.compendiumDetail', STORE, handleCompendiumDetails);
+  $('#compendiumSpells').on('click', '.compendium-detail', STORE, handleCompendiumDetails);
   $('#compendiumOfSpells').on('click', '.this-spell-book', STORE, handleSpellBook);
   $('#compendiumDetail').on('click', '.back-to-compendium', STORE, handleViewCompendium);
   $('#compendiumDetail').on('click', '.add-to-spell-book', STORE, handleAddSpell);
