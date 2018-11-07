@@ -57,21 +57,27 @@ const renderCompendiumResults = function (store) {
     case 'cantrip':
       compendiumList.cantrips.push(
         `<li id="${item._id}" class="compendium-list-item">
-                <a href="#" class="compendium-detail">${item.name}</a>
-              </li>`
+            <a href="#" class="compendium-detail">${item.name}</a>
+            <span class="compendium-detail-separator"> – </span>
+            <span class="compendium-detail-type">${item.type}</span>
+          </li>`
       );
       break;
     case '1':
       compendiumList.levelOne.push(
         `<li id="${item._id}" class="compendium-list-item">
-              <a href="#" class="compendium-detail">${item.name}</a>
-            </li>`
+            <a href="#" class="compendium-detail">${item.name}</a>
+            <span class="compendium-detail-separator"> – </span>
+            <span class="compendium-detail-type">${item.type}</span>
+          </li>`
       );
       break;
     case '2':
       compendiumList.levelTwo.push(
         `<li id="${item._id}" class="compendium-list-item">
             <a href="#" class="compendium-detail">${item.name}</a>
+            <span class="compendium-detail-separator"> – </span>
+            <span class="compendium-detail-type">${item.type}</span>
           </li>`
       );
       break;
@@ -79,6 +85,8 @@ const renderCompendiumResults = function (store) {
       compendiumList.levelThree.push(
         `<li id="${item._id}" class="compendium-list-item">
           <a href="#" class="compendium-detail">${item.name}</a>
+          <span class="compendium-detail-separator"> – </span>
+          <span class="compendium-detail-type">${item.type}</span>
         </li>`
       );
       break;
@@ -86,6 +94,8 @@ const renderCompendiumResults = function (store) {
       compendiumList.levelFour.push(
         `<li id="${item._id}" class="compendium-list-item">
           <a href="#" class="compendium-detail">${item.name}</a>
+          <span class="compendium-detail-separator"> – </span>
+          <span class="compendium-detail-type">${item.type}</span>
         </li>`
       );
       break;
@@ -93,6 +103,8 @@ const renderCompendiumResults = function (store) {
       compendiumList.levelFive.push(
         `<li id="${item._id}" class="compendium-list-item">
           <a href="#" class="compendium-detail">${item.name}</a>
+          <span class="compendium-detail-separator"> – </span>
+          <span class="compendium-detail-type">${item.type}</span>
         </li>`
       );
       break;
@@ -100,6 +112,8 @@ const renderCompendiumResults = function (store) {
       compendiumList.levelSix.push(
         `<li id="${item._id}" class="compendium-list-item">
           <a href="#" class="compendium-detail">${item.name}</a>
+          <span class="compendium-detail-separator"> – </span>
+          <span class="compendium-detail-type">${item.type}</span>
         </li>`
       );
       break;
@@ -107,6 +121,8 @@ const renderCompendiumResults = function (store) {
       compendiumList.levelSeven.push(
         `<li id="${item._id}" class="compendium-list-item">
           <a href="#" class="compendium-detail">${item.name}</a>
+          <span class="compendium-detail-separator"> – </span>
+          <span class="compendium-detail-type">${item.type}</span>
         </li>`
       );
       break;
@@ -114,14 +130,18 @@ const renderCompendiumResults = function (store) {
       compendiumList.levelEight.push(
         `<li id="${item._id}" class="compendium-list-item">
           <a href="#" class="compendium-detail">${item.name}</a>
+          <span class="compendium-detail-separator"> – </span>
+          <span class="compendium-detail-type">${item.type}</span>
         </li>`
       );
       break;
     case '9':
       compendiumList.levelNine.push(
         `<li id="${item._id}" class="compendium-list-item">
-        <a href="#" class="compendium-detail">${item.name}</a>
-      </li>`
+          <a href="#" class="compendium-detail">${item.name}</a>
+          <span class="compendium-detail-separator"> – </span>
+          <span class="compendium-detail-type">${item.type}</span>
+        </li>`
       );
       break;
     default:
