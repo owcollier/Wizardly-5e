@@ -500,9 +500,15 @@ fieldset {
 }
 
 .compendium-list-item {
-	margin-left: 2em;
-	margin-bottom: 5px;
+	/* margin-left: 2em; */
+	margin-bottom: 0.5em;
 	font-size: 24px;
+
+	list-style: none;
+
+	padding: 8px;
+
+	border: 2px solid #f8f8f8;
 }
 
 .compendium-list-item a:hover {
