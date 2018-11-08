@@ -908,6 +908,14 @@ const handleViewCreateWizard = function (event) {
   renderPage(store);
 };
 
+const dummyHandler = function (event) {
+  // console.log('hello bacon');
+
+  const el = event.target.value;
+
+  console.log(el);
+};
+
 //on document ready bind events
 jQuery(function ($) {
 
@@ -953,6 +961,9 @@ jQuery(function ($) {
   $('#spell-book-section').on('click', '.spell-prepared-toggle', STORE, handleSpellPreparedToggle);
   $('#spell-book-section').on('click', '.spell-book-remove', STORE, handleSpellBookRemove);
   $('#spell-book-detail').on('click', '.my-spell-book', STORE, handleSpellBook);
+
+
+  $('#spellFilter').asEventStream('keydown').subscribe(dummyHandler);
 
 
   // nav bar listeners
